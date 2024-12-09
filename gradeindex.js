@@ -1,26 +1,35 @@
-function generateGrade(){
-    let marks = parseInt(prompt("enter student marks (0 and 100):"));
-    if(isNaN(marks) || marks < 0 || marks > 100){
-        alert("please enter a grade btw 0 and 100.");
+const prompt = require("prompt-sync")();
+
+function generateGrade() {
+    let marks = parseInt(prompt("Enter student marks (0 to 100):"));
+    
+    // Validate the input
+    if (isNaN(marks) || marks < 0 || marks > 100) {
+        console.log("Please enter a grade between 0 and 100.");
         return;
     }
+
     let grade;
-    if (marks > 79){
-        grade = "A"
-        alert("Good job")
-    }else if(marks >= 60){
-        grade = "B"
-        alert("Almost there")
-    }else if(marks >= 50){
-        grade = "C"
-        alert("keep up")
-    }else if(marks >= 40){
-        grade = "D"
-        alert("Work harder")
-    }else if(marks < 40){
-        grade = "E"
-        alert("Extra classes for you")
+    // Determine the grade based on marks
+    if (marks > 79) {
+        grade = "A";
+        console.log("Good job");
+    } else if (marks >= 60) {
+        grade = "B";
+        console.log("Almost there");
+    } else if (marks >= 50) {
+        grade = "C";
+        console.log("Keep up");
+    } else if (marks >= 40) {
+        grade = "D";
+        console.log("Work harder");
+    } else {
+        grade = "E";
+        console.log("Extra classes for you");
     }
     
-    alert("The grade for "  +marks+" marks is:"  +  grade)
+    // Output the final grade
+    console.log(`The grade for ${marks} marks is: ${grade}`);
 }
+
+generateGrade();
