@@ -1,22 +1,22 @@
 const prompt = require("prompt-sync")();
 
 function checkSpeeds() {
-    const speeds = [90, 80, 100, 120, 200, 400, 300];  // Array of speeds to check
-    const speedLimit = 70;  // The speed limit
-    const suspensionLimit = 12;  // Demerit points limit for license suspension
+    const speeds = [90, 80, 100, 120, 200, 400, 300];
+    const speedLimit = 70; 
+    const suspensionLimit = 12;
     
     speeds.forEach(speed => {
         let result;
         if (speed <= speedLimit) {
-            result = "Ok";  // Speed is within the limit
+            result = "Ok";  
         } else {
-            let overLimit = speed - speedLimit;  // How much the speed exceeds the limit
-            let demeritPoints = Math.floor(overLimit / 5);  // Calculate demerit points
+            let overLimit = speed - speedLimit;
+            let demeritPoints = Math.floor(overLimit / 5);  
             
             if (demeritPoints > suspensionLimit) {
-                result = "License suspended";  // If demerit points exceed limit, suspend license
+                result = "License suspended";  
             } else {
-                result = "Total demerit points: " + demeritPoints;  // Otherwise, show the demerit points
+                result = "Total demerit points: " + demeritPoints; 
             }
         }
 

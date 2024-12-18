@@ -3,14 +3,14 @@ const prompt = require("prompt-sync")();
 function generateGrade() {
     let marks = parseInt(prompt("Enter student marks (0 to 100):"));
     
-    // Validate the input
+
     if (isNaN(marks) || marks < 0 || marks > 100) {
         console.log("Please enter a grade between 0 and 100.");
         return;
     }
 
     let grade;
-    // Determine the grade based on marks
+    
     if (marks > 79) {
         grade = "A";
         console.log("Good job");
